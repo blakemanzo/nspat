@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NSPAT</title>
+
+  <base href="/" />
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montserrat:400,500,700'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/reset.css"/>
+  <link rel="stylesheet" href="/app/bower_components/angular-material/angular-material.min.css"/>
+  <link rel="stylesheet" href="assets/app.css"/>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+  <style>
+    #page-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 950;
+        background-color: #F5F5F5;
+    }
+  </style>
+</head>
+
+<body ng-app="nspat" layout="row" ng-controller="mainCtrl as main">
+
+<div id="page-loading" ng-hide="pageLoaded">
+  <div class="three-bounce-spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+</div>
+
+<md-sidenav ng-cloak class="nspat-sidebar md-sidenav-right md-whiteframe-z2" md-component-id="right">
+      <md-toolbar class="nspat-sidebar-header" layout="row" layout-align="start end">
+        <div class="sidebar-overlay"></div>
+        <img class="nspat-ns-logo" src="assets/north-sydney.png">
+        <md-button ng-click="toggleRight()" class="nspat-sidebar-close-button md-icon-button" aria-label="Menu Toggle">
+          <md-icon md-font-icon="fa-close" class="md-menu-text-color fa s24"></md-icon>
+        </md-button>
+        <div class="nspat-sidebar-title">
+        <h1>North Sydney<br/>Public Art Walk</h1>
+        </div>
+      </md-toolbar>
+      <md-button ng-click="toggleRight()" class="nspat-menu-button" ui-sref="home">Map</md-button>
+      <md-divider></md-divider>
+      <md-button ng-click="toggleRight()" class="nspat-menu-button" ui-sref="list">List</md-button>
+
+    </md-sidenav>
+
+<md-content>
+  <md-toolbar>
+      <div class="nspat-toolbar md-toolbar-tools">
+        <img src="assets/logo.png">
+
+        <h2 class="nspat-title">
+          <span>rt Walk</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button ng-click="toggleRight()" class="md-icon-button" aria-label="Settings">
+          <md-icon md-font-icon="fa-bars" class="md-menu-text-color fa s24"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+   
+    <div ui-view></div>
+
+</md-content>
+
+<script src="/app/bower_components/angular/angular.min.js"></script>
+<script src="/app/bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="/app/bower_components/angular-aria/angular-aria.min.js"></script>
+<script type="text/javascript" src="/app/bower_components/angular-material/angular-material.min.js"></script>
+<script type="text/javascript" src="/app/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script src="/app/controllers/mainCtrl.js"></script>
+<script src="/app/controllers/homeCtrl.js"></script>
+
+<script src="/app/app.js"></script>
+<script src="/app/app.routes.js"></script>
+
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+
+</body>
+</html>

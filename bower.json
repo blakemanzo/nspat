@@ -1,0 +1,21 @@
+{
+  "name": "nspat",
+  "description": "Prototype for the North Sydney Public Art Walk",
+  "version": "1.0.0",
+  "homepage": "http://nsart.herokuapp.com/",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.4.x",
+    "angular-animate": "^1.4.x",
+    "angular-aria": "^1.4.x",
+    "angular-material": "master",
+    "angular-ui-router": "~0.2.15"
+  },
+  "devDependencies": {
+    "angular-material": "~0.11.1"
+  },
+  "resolutions": {
+    "angular-material": "~0.11.1"
+  }
+}
